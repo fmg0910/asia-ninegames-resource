@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>cns-sportsbet – 足彩竞猜基础指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #fbe9d7 0%, #fadbc8 50%, #f7cdb5 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 20px 40px;
+        }
+
+        /* 顶部导航 */
+        .nav-bar {
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+            background: rgba(255, 245, 235, 0.7);
+            backdrop-filter: blur(8px);
+            border-radius: 60px;
+            padding: 14px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 16px rgba(200, 120, 60, 0.10);
+            border: 1px solid rgba(230, 190, 160, 0.35);
+        }
+
+        .nav-logo {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #7b4a2c;
+            letter-spacing: 1px;
+            background: #fff2e6;
+            padding: 4px 16px;
+            border-radius: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5a3b28;
+            font-size: 0.95rem;
+            padding: 6px 14px;
+            border-radius: 30px;
+            transition: 0.2s;
+            background: transparent;
+        }
+
+        .nav-links a:hover {
+            background: #e8cdbb;
+            color: #2f1f14;
+        }
+
+        /* 主卡片容器 */
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 32px;
+        }
+
+        .card {
+            background: #fffffffa;
+            border-radius: 36px;
+            padding: 36px 40px;
+            box-shadow: 0 20px 40px -12px rgba(160, 90, 40, 0.18);
+            margin-bottom: 28px;
+            border: 1px solid #f0dfd0;
+            transition: 0.15s;
+        }
+
+        .card-soft {
+            background: #fffcf7f0;
+        }
+
+        /* hero 区 */
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: #3d281b;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            color: #6b4f3b;
+            max-width: 680px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .hero-link-wrap {
+            margin-top: 8px;
+        }
+
+        .hero-link-wrap a {
+            display: inline-block;
+            background: #dba885;
+            color: #2d1b10;
+            padding: 10px 32px;
+            border-radius: 60px;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(170, 90, 30, 0.18);
+            transition: 0.15s;
+            border: 1px solid #eecab1;
+        }
+
+        .hero-link-wrap a:hover {
+            background: #c9926d;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 18px -6px rgba(150, 70, 20, 0.25);
+        }
+
+        /* 段落间距 */
+        .card p {
+            color: #3d2b1e;
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-label {
+            font-weight: 500;
+            color: #7a4c2c;
+            letter-spacing: 0.3px;
+            display: inline-block;
+            background: #f2decf;
+            padding: 2px 18px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-top: 8px;
+        }
+
+        .scene-item {
+            background: #fff6ee;
+            border-radius: 28px;
+            padding: 24px 20px;
+            border: 1px solid #eedccf;
+            transition: 0.1s;
+        }
+
+        .scene-item h3 {
+            font-weight: 500;
+            font-size: 1.2rem;
+            color: #422f20;
+            margin-bottom: 10px;
+        }
+
+        .scene-item p {
+            font-size: 0.95rem;
+            color: #4f3927;
+            margin-bottom: 0;
+        }
+
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .faq-row {
+            border-bottom: 1px solid #efdbcd;
+            padding-bottom: 12px;
+        }
+
+        .faq-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #371f12;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+
+        .faq-a {
+            color: #634b38;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .footnote {
+            margin-top: 18px;
+            font-size: 0.9rem;
+            color: #7a5e4b;
+            text-align: center;
+            border-top: 1px solid #f0ddd0;
+            padding-top: 22px;
+        }
+
+        .footnote a {
+            color: #5b3e2b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #dbb89f;
+        }
+
+        .footnote a:hover {
+            color: #2a1a10;
+        }
+
+        @media (max-width: 640px) {
+            .nav-bar {
+                padding: 12px 20px;
+                border-radius: 40px;
+                flex-direction: column;
+                gap: 10px;
+                align-items: stretch;
+                text-align: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .card {
+                padding: 28px 20px;
+                border-radius: 28px;
+            }
+
+            .hero-title {
+                font-size: 1.7rem;
+            }
+
+            .scene-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav-bar">
+    <span class="nav-logo">⚽ cns-sportsbet</span>
+    <div class="nav-links">
+        <a href="#intro">介绍</a>
+        <a href="#scenes">常见场景</a>
+        <a href="#faq">说明</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <!-- hero + 核心介绍 -->
+    <div class="card" id="intro">
+        <div class="hero-title">关于站点 &amp; 足彩竞猜</div>
+        <div class="hero-sub">
+            cns-sportsbet 是一个围绕体育赛事信息整合的内容型站点，为关注比赛结果的爱好者提供基础的资讯与数据参考。这里没有喧哗的推荐，只有平实的介绍和真诚的说明。
+        </div>
+        <p>
+            提到<strong>体育竞猜</strong>，很多人第一时间想到的就是充满偶然性的比赛过程和赛果分析。 
+            <a href="https://cns-sportsbet.com" style="color:#75482b; font-weight:500; text-decoration:underline; text-underline-offset:3px;">足彩竞猜</a> 
+            作为其中关注度较高的一类，涵盖了联赛、杯赛等多种赛制，爱好者借此交流观点、了解球队动态。本站所展示的内容均来自公开赛事信息，不引导投注行为，仅做体育文化讨论。
+        </p>
+        <p>
+            无论你是刚开始留意赛前数据，还是希望更系统地理解不同联赛的规则差异，这里都提供了一种温和的切入方式——先了解，再判断。
+        </p>
+        <div class="hero-link-wrap">
+            <a href="https://cns-sportsbet.com">足彩竞猜</a>
+        </div>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="card card-soft" id="scenes">
+        <span class="section-label">📋 常见使用场景</span>
+        <div class="scene-grid">
+            <div class="scene-item">
+                <h3>赛前信息整合</h3>
+                <p>比赛日之前，了解近期交锋记录、伤病名单以及天气对场地的影响，这些基础信息能帮你更客观地评估局势。</p>
+            </div>
+            <div class="scene-item">
+                <h3>联赛规则对比</h3>
+                <p>不同联赛在积分、升降级、杯赛资格上各有差异。通过站内汇总说明，快速厘清五大联赛及二级联赛的独特之处。</p>
+            </div>
+            <div class="scene-item">
+                <h3>数据趋势观察</h3>
+                <p>通过公开的统计图表观察球队进球时段、主客场表现等趋势，辅助形成自己的分析视角，而非盲从外界声音。</p>
+            </div>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.95rem; color: #6b4b36;">
+            以上场景均以信息查阅为核心，不涉及任何资金操作建议。如果你对某个联赛特别感兴趣，可以通过 
+            <a href="https://cns-sportsbet.com" style="color:#6b3e25; font-weight:500; text-decoration:underline;">足彩竞猜</a> 
+            页面找到对应的赛事概要。
+        </p>
+    </div>
+
+    <!-- 常见说明 FAQ 摘要 -->
+    <div class="card" id="faq">
+        <span class="section-label">❓ 常见说明</span>
+        <div class="faq-mini">
+            <div class="faq-row">
+                <div class="faq-q">这个网站提供实时赔率吗？</div>
+                <div class="faq-a">不直接提供。cns-sportsbet 侧重赛事基础数据和规则科普，不展示任何动态赔率或投注引导。</div>
+            </div>
+            <div class="faq-row">
+                <div class="faq-q">信息更新频率如何？</div>
+                <div class="faq-a">联赛数据一般于每个比赛日前后更新，杯赛信息随赛程同步。我们会尽量保证准确性，但建议以官方发布为准。</div>
+            </div>
+            <div class="faq-row">
+                <div class="faq-q">为什么选择从了解开始？</div>
+                <div class="faq-a">因为盲从容易让人迷失。先花时间理解赛事结构和球队背景，再形成自己的判断——这也是站点内容设计的初衷。</div>
+            </div>
+            <div class="faq-row">
+                <div class="faq-q">有用户社区或讨论区吗？</div>
+                <div class="faq-a">目前没有独立的讨论区。本站定位为信息参考平台，不设交互板块，专注于内容本身。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 结语 / 信任说明 -->
+    <div class="card" style="background: #fff9f1; text-align: left;">
+        <p>
+            <span style="background: #edd5c1; padding:0 8px; border-radius:20px; font-size:0.8rem;">&nbsp;💬&nbsp;</span> 
+            无论你是刚接触体育竞猜的新人，还是希望多一个信息渠道的老球迷，cns-sportsbet 都愿意做那个安静的资料架。  
+            我们相信，任何判断都应该建立在透明、克制的信息基础上。如果你对某个知识点有疑问，不妨先从 
+            <a href="https://cns-sportsbet.com" style="color:#6b3f27; font-weight:500; text-decoration:underline;">足彩竞猜</a> 
+            这个入口开始浏览。
+        </p>
+        <p style="margin-top: 16px; font-size: 0.9rem; color: #7c614d;">
+            本站所有内容仅供体育文化参考，不构成任何形式的经济建议。请保持理性，享受比赛本身。
+        </p>
+    </div>
+
+    <div class="footnote">
+        cns-sportsbet · 资料性站点 · 内容持续完善中<br>
+        <span style="display:inline-block; margin-top:6px;">© 2025 · 仅供信息参考</span>
+    </div>
+
+</div>
+
+</body>
+</html>
