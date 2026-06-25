@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>九游 · 综合游戏平台 | 稳定入口与页面说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      background-color: #f7f5f9;
+      color: #1e1b24;
+    }
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(135deg, #141218 0%, #2a2533 100%);
+      color: #efedf2;
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #b7a9d4, #8f7bbf, #b7a9d4);
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      color: #f0ecf5;
+    }
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #cbbde0;
+      max-width: 680px;
+      margin: 0.6rem auto 0;
+      border-top: 1px solid #3f3750;
+      padding-top: 1rem;
+    }
+    /* 浅色正文区卡片 */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+    .intro-block {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.04);
+      padding: 2.2rem 2rem;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.2s;
+    }
+    .intro-block:last-of-type {
+      margin-bottom: 1.5rem;
+    }
+    .intro-block h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #2b2335;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .intro-block h2::before {
+      content: '◆';
+      color: #8c76b8;
+      font-size: 1.1rem;
+    }
+    .intro-block p {
+      margin-bottom: 0.9rem;
+      color: #2c2735;
+    }
+    .intro-block p:last-child {
+      margin-bottom: 0;
+    }
+    .accent-link {
+      color: #6f4f9c;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .accent-link:hover {
+      color: #4b2f73;
+      border-bottom-color: #b197d6;
+    }
+    .highlight {
+      background: #f1ecf9;
+      border-left: 4px solid #9a82c4;
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
+      margin: 0.8rem 0;
+      color: #2b2533;
+    }
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .col-item {
+      flex: 1 1 200px;
+      background: #faf8fd;
+      border-radius: 14px;
+      padding: 1.2rem 1rem;
+    }
+    .col-item strong {
+      display: block;
+      font-size: 1rem;
+      color: #3e2e54;
+      margin-bottom: 0.25rem;
+    }
+    .col-item span {
+      font-size: 0.95rem;
+      color: #48425a;
+    }
+    /* 页尾 */
+    .site-footer {
+      background: #1e1b26;
+      color: #ccc5da;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.95rem;
+      border-top: 1px solid #332d40;
+    }
+    .site-footer .footer-link {
+      color: #cbbde0;
+      text-decoration: none;
+      border-bottom: 1px solid #5b4e74;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .site-footer .footer-link:hover {
+      color: #e5ddf2;
+      border-bottom-color: #a28fc9;
+    }
+    .faq-mini {
+      background: #eae6f1;
+      border-radius: 16px;
+      padding: 1.2rem 1.6rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+    .faq-mini dt {
+      font-weight: 600;
+      color: #362b48;
+      margin-top: 0.6rem;
+    }
+    .faq-mini dt:first-of-type {
+      margin-top: 0;
+    }
+    .faq-mini dd {
+      margin-left: 0.5rem;
+      color: #3a324b;
+      font-size: 0.95rem;
+      border-bottom: 1px dashed #cfc6df;
+      padding-bottom: 0.5rem;
+    }
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .intro-block {
+        padding: 1.6rem 1.2rem;
+      }
+      .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>九游 · 综合游戏平台</h1>
+  <p class="sub">稳定的服务入口 · 清晰的导航说明 · 跨终端体验</p>
+</header>
+
+<main class="container">
+
+  <div class="intro-block">
+    <h2>平台定位与背景</h2>
+    <p><strong>九游</strong>是一个面向中文用户的游戏内容聚合站点，持续稳定运营多年，覆盖页游、手游资讯及社区互动。平台以“稳定入口”为核心设计原则，无论是页面结构、资源加载还是导航逻辑，都保持一贯的清晰与低跳转率。背后的技术团队注重基础体验，每一次迭代都以页面说明和用户路径优化为前置条件，力求让访问者省去摸索成本。</p>
+    <p>从首页概览到细分频道，<a href="https://asia-ninegames.com.cn" class="accent-link">九游</a>在信息密度与视觉节奏之间取得平衡：不堆砌弹窗，不滥用浮层，每个模块的说明文字都经过提炼。对于习惯快速检索的游戏玩家而言，这种克制的设计反而提升了信息获取效率。</p>
+  </div>
+
+  <div class="intro-block">
+    <h2>内容板块与结构特点</h2>
+    <p>站点主要围绕三大模块展开：游戏库、资讯动态与玩家专区。游戏库采用标签式分类与实时热度排序，资讯部分保持日更频率，覆盖新游评测、版本更新与行业观察。与许多同类站点不同的是，<a href="https://asia-ninegames.com.cn" class="accent-link">九游</a>在页面顶部设置了稳定的常驻导航区，并提供精简版站点地图，让首次访问的用户也能快速定位。</p>
+    <div class="highlight">
+      <strong>特点摘要</strong>：导航层级 ≤ 3 | 首屏内容加载 ≤ 1.5s | 关键词直达入口稳定。
+    </div>
+    <p>此外，平台对移动端适配做了专项处理：按钮热区、字体缩放、横向滚动规避均在标准之上。无论使用手机还是桌面浏览器，页面说明与核心操作区域始终保持一致的比例和间距。</p>
+  </div>
+
+  <div class="intro-block">
+    <h2>典型使用场景与FAQ摘要</h2>
+    <p>日常场景包括：寻找某款经典页游的最新服务器状态、浏览当日热门游戏资讯、在社区内查看攻略回帖。对于偏好简洁界面的用户，<a href="https://asia-ninegames.com.cn" class="accent-link">九游</a>的首页提供了一个直达各子频道的入口区，无需多次点击即可进入目标板块。下面整理了几个常见问题摘要：</p>
+    <dl class="faq-mini">
+      <dt>如何快速找到某款游戏的主页？</dt>
+      <dd>在顶部搜索框输入完整或关键词，系统会返回匹配结果并附带官方标签。</dd>
+      <dt>页面说明中的“稳定入口”具体指什么？</dt>
+      <dd>指核心导航、搜索栏、用户中心入口在每次改版中位置固定，不随促销或活动临时移位。</dd>
+      <dt>是否需要注册才能浏览资讯？</dt>
+      <dd>资讯与游戏库内容均对访客开放阅读，部分互动功能（如收藏、评论）需注册账号。</dd>
+    </dl>
+    <div class="two-col">
+      <div class="col-item">
+        <strong>适用设备</strong>
+        <span>Windows / macOS / iOS / Android 主流浏览器</span>
+      </div>
+      <div class="col-item">
+        <strong>内容更新</strong>
+        <span>资讯频道每日更新，游戏库每周同步新游与停服信息</span>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>专题介绍 · 基于稳定入口与页面说明方向</p>
+  <p style="margin-top: 0.4rem;">
+    <a href="https://asia-ninegames.com.cn" class="footer-link">九游</a> · 简洁专业 信息密度适中
+  </p>
+  <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.6;">© 页面内容仅作展示用途</p>
+</footer>
+
+</body>
+</html>
